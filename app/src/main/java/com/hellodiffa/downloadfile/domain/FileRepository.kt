@@ -1,11 +1,10 @@
 package com.hellodiffa.downloadfile.domain
 
-import com.hellodiffa.downloadfile.remote.DummyData
-import com.hellodiffa.downloadfile.remote.Resource
+import io.ktor.client.response.HttpResponse
 import kotlinx.coroutines.flow.Flow
 import java.io.File
 
 interface FileRepository {
 
-    suspend fun downloadFile(file: File, data: DummyData): Flow<Resource>
+    suspend fun downloadFile(file: File, url: String): Flow<HttpResponse>
 }
